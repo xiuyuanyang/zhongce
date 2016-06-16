@@ -1,0 +1,141 @@
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>购胎抽奖</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<style type="text/css">
+/** 重置浏览器默认标签样式 */
+body, ul, li {
+	margin: 0;
+	padding: 0;
+}
+
+.xttblog {
+	width: 90%;
+	padding: 30px;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: aqua;
+}
+
+.buttonBox {
+	margin-top: 50px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.box {
+	width: 100%;
+	list-style-type: none;
+	background-color: antiquewhite;
+	border: 2px solid red;
+}
+
+.box:after {
+	content: ".";
+	display: block;
+	line-height: 0;
+	width: 0;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	overflow: hidden;
+}
+
+.box li {
+	float: left;
+	width: 33.333333333%;
+	border: 2px solid red;
+	box-sizing: border-box;
+}
+
+.box li a, .box li a:visited {
+	display: block;
+	width: 100%;
+	height: 230px;
+	text-align: center;
+	margin-left: -5px;
+	margin-top: -5px;
+	position: relative;
+	z-index: 1;
+	box-sizing: border-box;
+}
+
+.box li a:hover {
+	border-color: #f00;
+	z-index: 2;
+}
+
+button {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+
+.bt1 {
+	border-radius: 15px 0 0 15px;
+	background-image: url();
+	margin-left: 50px;
+}
+
+.bt2 {
+	background-image: url();
+}
+
+.bt3 {
+	border-radius: 0 15px 15px 0;
+	background-image: url();
+	margin-right: 50px;
+}
+
+.tips {
+	margin-bottom: 10px;
+	margin-top: 50px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.jihui {
+	margin-top: 50px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+</style>
+
+
+</head>
+<body>
+
+	<div class="jihui">Hi 你还有999次抽奖机会</div>
+
+	<div class="xttblog">
+		<ul class="box">
+			<li><a href="#" title="1"><img src="sh.jpg" /></a></li>
+			<li><a href="#" title="2"><img src="bd.jpg" /></a></li>
+			<li><a href="#" title="3"><img src="tb.jpg" /></a></li>
+			<li><a href="#" title="4"><img src="fh.jpg" /></a></li>
+			<li><a href="#" title="5"><img src="tb.jpg" /></a></li>
+			<li><a href="#" title="6"><img src="tb.jpg" /></a></li>
+			<li><a href="#" title="7"><img src="tb.jpg" /></a></li>
+			<li><a href="#" title="8"><img src="tb.jpg" /></a></li>
+			<li><a href="#" title="9"><img src="tb.jpg" /></a></li>
+		</ul>
+	</div>
+
+	<div class="buttonBox" align="center">
+		<button class="bt1">Button Tag</button>
+		<button class="bt2">Button Tag</button>
+		<button class="bt3">Button Tag</button>
+	</div>
+
+	<div class="tips">TIPS:最终解释权归杭州中策车空间汽车服务有限公司所有</div>
+</body>
+</html>
