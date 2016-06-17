@@ -1,4 +1,6 @@
 
+
+
 <html>
 <head>
 <meta charset="utf-8">
@@ -13,8 +15,7 @@ body, ul, li {
 
 .xttblog {
 	width: 90%;
-	padding: 30px;
-	margin-top: 50px;
+	height: 60%;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: aqua;
@@ -30,9 +31,9 @@ body, ul, li {
 
 .box {
 	width: 100%;
-	list-style-type: none;
 	background-color: antiquewhite;
 	border: 2px solid red;
+	height: 100%;
 }
 
 .box:after {
@@ -48,7 +49,9 @@ body, ul, li {
 
 .box li {
 	float: left;
-	width: 33.333333333%;
+	width: 33.33%;
+	height: 33.33%;
+	margin: auto;
 	border: 2px solid red;
 	box-sizing: border-box;
 }
@@ -102,7 +105,8 @@ button {
 }
 
 .jihui {
-	margin-top: 50px;
+	margin-top: 2%;
+	margin-bottom: 5%;
 	width: 100%;
 	display: flex;
 	flex-direction: row;
@@ -118,15 +122,16 @@ button {
 
 	<div class="xttblog">
 		<ul class="box">
-			<li><a href="#" title="1"><img src="sh.jpg" /></a></li>
-			<li><a href="#" title="2"><img src="bd.jpg" /></a></li>
-			<li><a href="#" title="3"><img src="tb.jpg" /></a></li>
-			<li><a href="#" title="4"><img src="fh.jpg" /></a></li>
-			<li><a href="#" title="5"><img src="tb.jpg" /></a></li>
-			<li><a href="#" title="6"><img src="tb.jpg" /></a></li>
-			<li><a href="#" title="7"><img src="tb.jpg" /></a></li>
-			<li><a href="#" title="8"><img src="tb.jpg" /></a></li>
-			<li><a href="#" title="9"><img src="tb.jpg" /></a></li>
+			<li><a href="#" title="1"><img id="li1" src="sh.jpg" /></a></li>
+			<li><a href="#" title="2"><img id="li2" src="bd.jpg" /></a></li>
+			<li><a href="#" title="3"><img id="li3" src="tb.jpg" /></a></li>
+			<li><a href="#" title="4"><img id="li4" src="fh.jpg" /></a></li>
+			<li id="li5"><a href="#" title="5"><img id="img5"
+					src="tb.jpg" /></a></li>
+			<li><a href="#" title="6"><img id="li6" src="tb.jpg" /></a></li>
+			<li><a href="#" title="7"><img id="li7" src="tb.jpg" /></a></li>
+			<li><a href="#" title="8"><img id="li8" src="tb.jpg" /></a></li>
+			<li><a href="#" title="9"><img id="li9" src="tb.jpg" /></a></li>
 		</ul>
 	</div>
 
@@ -137,5 +142,62 @@ button {
 	</div>
 
 	<div class="tips">TIPS:最终解释权归杭州中策车空间汽车服务有限公司所有</div>
+
+	<script type="text/javascript"
+		src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+	<script type="text/javascript"
+		src="http://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			var id;
+			var flag;
+
+			$("#li5").click(function() {
+
+				if (!!!flag) {
+					var i = 1;
+					var old;
+					id = setInterval(function() {
+
+						if (!!old) {
+							unAddRedFrame(old);
+						}
+						addRedFrame(i);
+
+						if (i == 1 | i == 2) {
+							old = i;
+							i = i + 1;
+						} else if (i == 3 | i == 6) {
+							old = i;
+							i = i + 3;
+						} else if (i == 9 | i == 8) {
+							old = i;
+							i = i - 1;
+						} else if (i == 7 | i == 4) {
+							old = i;
+							i = i - 3;
+						}
+
+						console.log("i = " + i + " old = " + old);
+
+					}, 100);
+					flag = true;
+				} else {
+					clearInterval(id);
+					flag = false;
+				}
+
+			});
+
+			function addRedFrame(num) {
+				$("ul li").eq(num - 1).css("border", "8px solid red");
+			}
+
+			function unAddRedFrame(num) {
+				$("ul li").eq(num - 1).css("border", "2px solid red");
+			}
+
+		});
+	</script>
 </body>
 </html>
